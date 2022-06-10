@@ -1,6 +1,5 @@
 package library.service;
 
-
 import library.entity.Author;
 import library.entity.Book;
 import library.entity.Publisher;
@@ -11,15 +10,16 @@ public class BookService {
 
     private final BookDaoExt DAO;
     private PublisherService publisherService;
+
     private final Author author = new Author();
     private final Publisher publisher = new Publisher();
-    
-    public BookService(){
-    this.DAO = new BookDaoExt();
+
+    public BookService() {
+        this.DAO = new BookDaoExt();
     }
-    
-    public Book createBook(){
-        
+
+    public Book createBook() {
+
         Book book = new Book();
         try {
             System.out.println("Insert ISBN ");
@@ -33,13 +33,15 @@ public class BookService {
             book.setAuthor(author);
             book.setPublisher(publisher);
             book.setCharge(Boolean.TRUE);
+            DAO.save(book);
+
+            return book;
         } catch (Exception e) {
             System.out.println("Fail creatring the book ");
             System.out.println(e.toString());
             return null;
         }
-    return book;
+
     }
-   
 
 }

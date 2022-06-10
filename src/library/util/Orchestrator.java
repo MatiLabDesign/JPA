@@ -2,13 +2,16 @@ package library.util;
 
 import java.util.Scanner;
 
-//import library.presistence.BookDaoExt;
-//import library.service.AuthorService;
-//import library.service.BookService;
-//import library.service.PublisherService;
-
+import library.presistence.BookDaoExt;
+import library.service.AuthorService;
+import library.service.BookService;
+import library.service.PublisherService;
 
 public class Orchestrator {
+
+    public static AuthorService as = new AuthorService();
+    public static PublisherService ps = new PublisherService();
+    public static BookService bs = new BookService();
 
     public static Scanner read = new Scanner(System.in);
     static boolean flag = true;
@@ -16,9 +19,9 @@ public class Orchestrator {
 
     public static int toSelect() {
 
-        int option=0;
+        int option = 0;
         do {
-            
+
             System.out.println("----------------------------------------");
             System.out.println("Chose one option:");
             System.out.println("----------------------------------------");
@@ -39,21 +42,16 @@ public class Orchestrator {
         return option;
 
     }
-    
-    
 
     public static void orchestratorMenu(int option) {
 
 //        AuthorService as = new AuthorService();
 //        PublisherService ps = new PublisherService();
 //        BookService bs = new BookService();
-
-        
-        
         switch (option) {
             case 1:
                 System.out.println("1");
-//                bs.createBook();
+               bs.createBook();
                 break;
             case 2:
                 System.out.println("2");
