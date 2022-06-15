@@ -2,7 +2,7 @@ package library.util;
 
 import java.util.Scanner;
 
-import library.presistence.BookDaoExt;
+
 import library.service.AuthorService;
 import library.service.BookService;
 import library.service.PublisherService;
@@ -51,13 +51,16 @@ public class Orchestrator {
         switch (option) {
             case 1:
                 System.out.println("1");
-               bs.createBook();
+                as.sayHi();
                 break;
             case 2:
                 System.out.println("2");
+                ps.sayHi();
                 break;
             case 3:
                 System.out.println("3");
+                bs.sayHi();
+                
                 break;
             case 4:
                 System.out.println("4");

@@ -8,16 +8,20 @@ import static library.util.Orchestrator.read;
 
 public class BookService {
 
-    private final BookDaoExt DAO;
+    public void sayHi() {
+        System.out.println("HI Im a Book: ");
+    }
+
+    private final BookDaoExt DAO = new BookDaoExt();
     private PublisherService publisherService;
 
     private final Author author = new Author();
     private final Publisher publisher = new Publisher();
 
-    public BookService() {
-        this.DAO = new BookDaoExt();
-    }
-
+//    public BookService() {
+//        this.DAO = new BookDaoExt();
+//    }
+//
     public Book createBook() {
 
         Book book = new Book();

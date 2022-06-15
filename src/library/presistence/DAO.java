@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 public class DAO<T> {
 
-    protected final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("JPA-LibraryPU");
+    protected final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("JPA-LibraryDaoPU");
     protected EntityManager em = EMF.createEntityManager();
 
     protected void conect() {
